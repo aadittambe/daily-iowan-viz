@@ -1,4 +1,4 @@
-var mymap = L.map('mapid').setView([41.6608501,-91.5305475], 15);
+var mymap = L.map('mapid').setView([41.6608501,-91.5305475], 14);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -21,7 +21,7 @@ data.forEach( row => {
         fillOpacity: 0.5,
         radius: 5
     }).addTo(mymap)
-    
+
     let popup = '<b>' + row.Candidate + '</b>' + '<br>' + row.Date +
         '<br>' + (row.TripDescription || ' ') +
         '<br><a href="' + row.URL + '" target="__blank">Read all about it.</a>'
