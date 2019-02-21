@@ -18,7 +18,7 @@ data.forEach( row => {
     let marker = L.circleMarker([row.Lat,row.Lon], {
         color: row.Color,
         fillColor: row.Color,
-        fillOpacity: 0.5,
+        fillOpacity: 0.9,
         radius: 5
     }).addTo(mymap)
 
