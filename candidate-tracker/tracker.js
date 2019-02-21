@@ -1,8 +1,8 @@
-var mymap = L.map('mapid').setView([41.6611, -91.5302], 3);
+var mymap = L.map('mapid').setView([41.6608501,-91.5305475], 15);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
+    maxZoom: 150,
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1IjoiYWFkaXR0YW1iZSIsImEiOiJjanNkcGMxbmowMG5lNDRydDd3Mm5taHVjIn0.fP9wK52zPEVxVfVau5bQOQ'
 }).addTo(mymap);
@@ -19,7 +19,7 @@ data.forEach( row => {
         color: row.Color,
         fillColor: row.Color,
         fillOpacity: 0.5,
-        radius: 10
+        radius: 5
     }).addTo(mymap)
     let popup = '<b>' + row.Candidate + '</b>' + '<br>' + row.Date +
         '<br>' + (row.TripDescription || ' ') +
