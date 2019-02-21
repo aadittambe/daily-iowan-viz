@@ -21,6 +21,7 @@ data.forEach( row => {
         fillOpacity: 0.5,
         radius: 5
     }).addTo(mymap)
+    
     let popup = '<b>' + row.Candidate + '</b>' + '<br>' + row.Date +
         '<br>' + (row.TripDescription || ' ') +
         '<br><a href="' + row.URL + '" target="__blank">Read all about it.</a>'
