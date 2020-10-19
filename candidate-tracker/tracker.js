@@ -1,14 +1,16 @@
 var mymap = L.map('mapid').setView([41.6608501,-91.5305475], 14);
 
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 150,
-    id: 'mapbox.streets',
-    accessToken: 'pk.eyJ1IjoiYWFkaXR0YW1iZSIsImEiOiJjanNkcGMxbmowMG5lNDRydDd3Mm5taHVjIn0.fP9wK52zPEVxVfVau5bQOQ'
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoiYWFkaXR0YW1iZSIsImEiOiJja2dndWpvOGgwNHZwMzNwMjljOXVldGQ1In0.YpMQ60BId8KySt-vLFbaRg'
 }).addTo(mymap);
 
 
-let csv = 'https://docs.google.com/spreadsheets/d/1fC_leedjjY8GuVErCSSe0uB9s9FpeOuQvyv2DxqQ3PE/export?format=csv&id=1fC_leedjjY8GuVErCSSe0uB9s9FpeOuQvyv2DxqQ3PE&gid=0'
+let csv = 'tracker.csv'
 
 let data = dl.csv(csv)
 
@@ -34,6 +36,7 @@ data.forEach( row => {
     marker.bindPopup(popup)
 
 })
+
 
 
 
